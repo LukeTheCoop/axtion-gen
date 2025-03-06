@@ -1,0 +1,197 @@
+/* Main container styles */
+.container {
+  background-color: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(51, 65, 85, 0.7);
+  height: fit-content;
+}
+
+/* Heading styles */
+.heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background-image: linear-gradient(to right, var(--gradient-from, #60A5FA), var(--gradient-to, #8B5CF6));
+  background-clip: text;
+  color: transparent;
+}
+
+/* Label styles */
+.label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+  color: var(--label-color, #93C5FD);
+}
+
+/* Input fields */
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(51, 65, 85, 0.7);
+  border-radius: 0.75rem;
+  color: #F1F5F9;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.input:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 2px var(--focus-color, #60A5FA);
+}
+
+.input::placeholder {
+  color: #64748B;
+}
+
+/* Textareas */
+.textarea {
+  composes: input;
+  min-height: 10rem;
+  resize: vertical;
+}
+
+/* Select inputs */
+.select {
+  composes: input;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2364748B' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+.select option {
+  background-color: #1E293B;
+  color: #F1F5F9;
+}
+
+/* Buttons */
+.button {
+  padding: 0.75rem 1.5rem;
+  background-image: linear-gradient(to right, var(--gradient-from, #60A5FA), var(--gradient-to, #8B5CF6));
+  color: white;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.button:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to right, var(--gradient-from-hover, #3B82F6), var(--gradient-to-hover, #7C3AED));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.button:hover::before {
+  opacity: 1;
+}
+
+.button span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Secondary button */
+.secondaryButton {
+  composes: button;
+  background-image: linear-gradient(to right, rgba(96, 165, 250, 0.3), rgba(139, 92, 246, 0.3));
+  color: #E2E8F0;
+  font-weight: 500;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+}
+
+.secondaryButton::before {
+  background-image: linear-gradient(to right, rgba(96, 165, 250, 0.4), rgba(139, 92, 246, 0.4));
+}
+
+/* Disabled button */
+.disabledButton {
+  composes: button;
+  background-image: linear-gradient(to right, #475569, #334155);
+  color: #94A3B8;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.disabledButton:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.disabledButton::before {
+  display: none;
+}
+
+/* Loading indicator */
+.loading {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Animation for elements appearing */
+.fadeIn {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.gridItem {
+  transition: transform 0.2s;
+}
+
+.gridItem:hover {
+  transform: scale(1.01);
+}

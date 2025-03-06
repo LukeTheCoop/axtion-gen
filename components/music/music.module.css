@@ -1,0 +1,255 @@
+/* Music player styles */
+.musicContainer {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.playerWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 2px solid rgba(244, 114, 182, 0.3);
+  transition: all 0.3s ease;
+  background-color: rgba(15, 23, 42, 0.3);
+}
+
+.playerWrapper:hover {
+  border-color: rgba(244, 114, 182, 0.5);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: scale(1.01);
+}
+
+.playerIframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.trackInfo {
+  padding: 0.75rem;
+  background-color: rgba(30, 41, 59, 0.4);
+  border-radius: 0.5rem;
+  border-left: 3px solid rgba(244, 114, 182, 0.5);
+}
+
+.startTimeContainer {
+  padding: 0.75rem;
+  background-color: rgba(30, 41, 59, 0.3);
+  border-radius: 0.5rem;
+  border-left: 3px solid rgba(244, 114, 182, 0.3);
+}
+
+.startTimeInput {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background-color: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(244, 114, 182, 0.3);
+  border-radius: 0.5rem;
+  color: rgb(249, 168, 212);
+  font-size: 1rem;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.startTimeInput:focus {
+  outline: none;
+  border-color: rgba(244, 114, 182, 0.7);
+  box-shadow: 0 0 0 2px rgba(244, 114, 182, 0.3);
+}
+
+.startTimeInput::placeholder {
+  color: rgba(249, 168, 212, 0.5);
+}
+
+/* Custom URL styles */
+.customUrlContainer {
+  padding: 0.75rem;
+  background-color: rgba(30, 41, 59, 0.3);
+  border-radius: 0.5rem;
+  border-left: 3px solid rgba(244, 114, 182, 0.3);
+  margin-bottom: 0.75rem;
+}
+
+.customUrlInput {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  background-color: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(244, 114, 182, 0.3);
+  border-radius: 0.5rem;
+  color: rgb(249, 168, 212);
+  font-size: 0.875rem;
+  transition: all 0.2s;
+}
+
+.customUrlInput:focus {
+  outline: none;
+  border-color: rgba(244, 114, 182, 0.7);
+  box-shadow: 0 0 0 2px rgba(244, 114, 182, 0.3);
+}
+
+.customUrlInput::placeholder {
+  color: rgba(249, 168, 212, 0.5);
+}
+
+/* Source toggle buttons */
+.sourceToggle {
+  display: flex;
+  background-color: rgba(30, 41, 59, 0.3);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.sourceToggleBtn {
+  flex: 1;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  transition: all 0.2s;
+  color: rgba(249, 168, 212, 0.7);
+  background-color: transparent;
+  border: none;
+}
+
+.sourceToggleBtn:hover {
+  color: rgba(249, 168, 212, 1);
+  background-color: rgba(30, 41, 59, 0.5);
+}
+
+.activeSourceToggleBtn {
+  background-image: linear-gradient(to right, rgba(244, 114, 182, 0.4), rgba(236, 72, 153, 0.4));
+  color: white;
+  font-weight: 500;
+}
+
+.controlButtons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background-color: rgba(30, 41, 59, 0.2);
+  border-radius: 0.75rem;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 9999px;
+  background-color: rgba(30, 41, 59, 0.8);
+  color: rgb(244, 114, 182);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.navButton:hover {
+  background-color: rgba(51, 65, 85, 0.8);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(244, 114, 182, 0.3);
+}
+
+.selectButton {
+  padding: 0.75rem 1rem;
+  background-image: linear-gradient(to right, rgb(244, 114, 182), rgb(236, 72, 153));
+  color: white;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  flex-grow: 1;
+  margin: 0 0.5rem;
+}
+
+.selectButton:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-image: linear-gradient(to right, rgb(249, 168, 212), rgb(244, 114, 182));
+}
+
+.selectedTrack {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(244, 114, 182, 0.3);
+  animation: pulse 2s infinite;
+}
+
+.selectedTrackText {
+  font-size: 0.875rem;
+  color: rgb(249, 168, 212);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 114, 182, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(244, 114, 182, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 114, 182, 0);
+  }
+}
+
+.volumeContainer {
+  padding: 0.75rem;
+  background-color: rgba(30, 41, 59, 0.3);
+  border-radius: 0.5rem;
+  border-left: 3px solid rgba(244, 114, 182, 0.3);
+  margin-top: 0.5rem;
+}
+
+.volumeSlider {
+  width: 100%;
+  height: 6px;
+  margin-top: 0.5rem;
+  background-color: rgba(15, 23, 42, 0.5);
+  border-radius: 3px;
+  appearance: none;
+  outline: none;
+}
+
+.volumeSlider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgb(244, 114, 182);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.volumeSlider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgb(244, 114, 182);
+  cursor: pointer;
+  transition: all 0.2s;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+}
+
+.volumeSlider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: rgb(236, 72, 153);
+}
+
+.volumeSlider::-moz-range-thumb:hover {
+  transform: scale(1.2);
+  background: rgb(236, 72, 153);
+} 
