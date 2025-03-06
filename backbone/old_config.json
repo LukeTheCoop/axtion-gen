@@ -1,0 +1,176 @@
+{
+    "video": {
+      "mobile": {
+        "width": 1080,
+        "height": 1920,
+        "font_size": 72,
+        "text_margin": 100
+      },
+      "landscape": {
+        "width": 1920,
+        "height": 1080,
+        "font_size": 64,
+        "text_margin": 80
+      }
+    },
+    "audio": {
+      "pause_factor": 0.5,
+      "silence_db": -70,
+      "voice": {
+        "voice_id": "AvUYKSeryCcU2BHSM8x7",
+        "model_id": "eleven_flash_v2",
+        "stability": 0.5,
+        "similarity_boost": 0.73,
+        "speed": 1.1,
+        "use_speaker_boost": true,
+        "output_format": "mp3_44100_128"
+      },
+      "voice_id": "AvUYKSeryCcU2BHSM8x7",
+      "model_id": "eleven_flash_v2",
+      "stability": 0.5,
+      "similarity_boost": 0.73,
+      "speed": 1.1,
+      "use_speaker_boost": true,
+      "output_format": "mp3_44100_128"
+    },
+    "music": {
+      "track_id": "RSW8qYXyfRQ",
+      "start_time": 5,
+      "volume": 0.35,
+      "custom_title": "I'm Going Nuclear",
+      "trim_audio": 10
+    },
+    "memory": {
+      "last_mothership": "In a more recent act of valor, on October 22, 2015, Sergeant Major Thomas P. Payne, then a Sergeant First Class in the U.S. Army\u2019s elite Delta Force, participated in a high-stakes hostage rescue mission in Hawija, Iraq. Intelligence had revealed that 70 hostages were facing imminent execution by ISIS militants. Under the cover of darkness, Payne and his team were inserted by helicopter near the prison compound. They swiftly engaged the enemy, breaching a building to liberate 37 hostages. Amidst intense gunfire and with the building engulfed in flames, Payne learned of additional hostages trapped in a second building. Without regard for his own safety, he fought his way inside, cutting through locks to free the remaining captives. Despite the collapsing structure and relentless enemy fire, Payne\u2019s unwavering determination ensured the successful rescue of all 70 hostages. For his extraordinary heroism, he was awarded the Medal of Honor on September 11, 2020.  \ufffc\n",
+      "last_prompt": "Create an engaging historical short account of the moment of action that caused Charles to get award.\n\nUse the detail given prior.\n\nEnsure a full story, start and finish. Make it intense, instantly hooking the reader.\n\nGrab the readers attention by saying in your hook how this is based on a true event. At the same time ensure the first shot is an action shot relevent video, reeling in the users instantly.\n\nEnsure the first video, line, and set up is perfect and attractive.\n\nEach line say at most one location, name, or time.  and slowly over time unvail the story.\n\nEnsure each line is short and punchy."
+    },
+    "output": {
+      "format": "mp4",
+      "codec": "h264",
+      "quality": "high"
+    },
+    "prompts": {
+      "military": {
+        "creative": {
+          "prompt": "You are the Creative Agent in the first step in the video production pipeline. Your task is to analyze the following inputs: 1. Mothership Data: A comprehensive collection of user-provided context, narrative guidelines, and script outlines. 2. Video List: A set of available short 5 second video clips with metadata. 3. User Prompt: The high-level prompt that describes the intended message and tone. Your response should: First generate a detailed set of commands to guide the script-writing agent. Then create a specified number of story arcs (for example, \"create 3 story arcs\"). Then include instructions that ensure a deep level of narrative detail and creative direction from the mothership. Then specify an action level that outlines how dynamic or detailed the final script should be. Recommend which videos from the list to incorporate, based on the best match for the intended theme, with plenty of options. Return your output as a JSON object with the following keys: - `story_arcs`: An array where each element describes one narrative arc. - `commands`: A detailed list of creative instructions, each clearly explaining what to incorporate from the mothership and how to structure the narrative. - `action_level`: A directive specifying the intensity or style of actions the script writer should implement. Ensure that your instructions are broad and comprehensive, providing as much useful detail as possible to guide the script writing agent in creating a phenomenal, cohesive script. Make a list of what videos should be used, ensuring they exist in the video list.Generate your creative command list as a JSON object.",
+          "story_arc_count": 2,
+          "depth_of_mothership": "medium",
+          "action_level": "medium",
+          "favorite_videos": [],
+        },
+        "polish": {
+          "prompt": "Refine and enhance the military narrative created by the Creative Agent and create a final script. Ensure your final script maintains the short punchy lines and captivating action-oriented hook. Ensure military terminology is accurate, the timeline is clear, and tactical details are precise. Follow the creative direction for a full story arc with clear beginning and end. Maintain the intense, engaging style while verifying historical accuracy of the story. Keep each line focused on a single detail (location, name, or time) to build the narrative progressively as specified in the creative prompt.",
+          "duration": "30sec",
+          "follow_creative": "high",
+          "specific_commands": []
+        },
+        "list": "Return a JSON video_list object based off the script given. Ensure that the videos exist, if they don't find the best substitute. Use desert videos for Afghanistan stories. your response as a JSON object where:\n- Each key is an audio filename (e.g., 'audio_1.mp3')\n- Each value is an object containing:\n  - 'source_video': The filename of the source video clip to use\n  - 'clip': The output clip filename (e.g., 'clip_1.mp4')\n  - 'line': The caption/narration text for this clip.\n\nExample JSON structure:\n{\n    \"audio_1.mp3\": {\n        \"source_video\": \"military_shooting_out_of_window_city_fpv.mp4\",\n        \"clip\": \"clip_1.mp4\",\n        \"line\": \"Enemy fire intensifies.\"\n    },\n    \"audio_2.mp3\": {...} etc. Due to token restraints you will need to create multiple responses, adding 'finish' at the end outside of the json when finished. Ensure each line is short and punchy, spliting up long lines across multiple clips, use different videos to encourage watch time. Ensure videos exist and are spelt correctly, look at this video list to make sure:"
+      }
+    },
+    "video_list": {
+      "military": [
+        "military_airport_operations.mp4",
+        "military_armored_boat_shooting_in_ocean.mp4",
+        "military_armored_vehicle_on_fire_desert.mp4",
+        "military_artillery_cannon_tpv.mp4",
+        "military_boat_on_water_multiple_angles.mp4",
+        "military_boats_driving_towards_shipping_yard.mp4",
+        "military_bridge_drone_shot.mp4",
+        "military_captain_giving_instructions_tpv.mp4",
+        "military_commander_meeting_tpv.mp4",
+        "military_dictatorship_military_presence_tpv.mp4",
+        "military_drone_flying_over_the_desert.mp4",
+        "military_firefighter_plane_putting_out_forest_fire_in_the_mountains.mp4",
+        "military_firefighter_taking_out_fire_on_ship_ocean.mp4",
+        "military_group_med_evac_motivational.mp4",
+        "military_group_of_soldiers_running_in_forest_tpv.mp4",
+        "military_gun_inspection_fpv.mp4",
+        "military_helicopter_base_with_soldiers_running_in_and_out_desert.mp4",
+        "military_helicopter_dropping_soldiers_tpv.mp4",
+        "military_huge_armored_boat_shooting_cannons.mp4",
+        "military_injured_soldier_getting_loaded_in_car_desert.mp4",
+        "military_jet_flying_in_air_tpv.mp4",
+        "military_jet_flying_to_target_tpv.mp4",
+        "military_large_battle_scene_heavy_action_aerial_shot.mp4",
+        "military_med_boats_flood.mp4",
+        "military_med_evac_city.mp4",
+        "military_med_evac_desert_wide.mp4",
+        "military_med_evac_jungle.mp4",
+        "military_med_evac_nuclear_facility.mp4",
+        "military_med_evac_rescue_mission_helicopter_desert.mp4",
+        "military_med_evac_soldier_getting_carried_through_a_mine_field_desert.mp4",
+        "military_med_evac_soldiers_carrying_out_injured_soldier_through_snow.mp4",
+        "military_med_evac_soldiers_getting_rescued_by_helicopter_oil_rig_ocean.mp4",
+        "military_med_evac_soldiers_rescuing_a_soldier_desert.mp4",
+        "military_med_evac_toxic_waste_zone.mp4",
+        "military_med_evac_with_helicopter_drop_in_background.mp4",
+        "military_medal_ceremony_tpv.mp4",
+        "military_navy_boats_volcano_beach_ocean.mp4",
+        "military_navy_destroyers_aircraft_carriers_ocean.mp4",
+        "military_radar_nvg_fpv.mp4",
+        "military_running_from_bombs_fire_desert.mp4",
+        "military_shooting_out_of_window_city_fpv.mp4",
+        "military_single_soldier_in_forest_building_camp_tpv.mp4",
+        "military_six_armored_boats_moving_fast.mp4",
+        "military_six_tank_convoy.mp4",
+        "military_soldier_at_funeral_for_comrades_tpv.mp4",
+        "military_soldier_doing_analysis_on_computers_tpv.mp4",
+        "military_soldier_repelling_from_helicopter.mp4",
+        "military_soldier_running_in_night_nvg_tpv.mp4",
+        "military_soldier_running_through_a_building_with_a_gun_hostages.mp4",
+        "military_soldier_sniping_in_mountains.mp4",
+        "military_soldier_sniping_out_of_building_tpv.mp4",
+        "military_soldier_standing_in_cargo_plane_looking_towards_camera_tpv.mp4",
+        "military_soldier_training_tpv.mp4",
+        "military_soldiers_carrying_away_injured_soldiers_desert.mp4",
+        "military_soldiers_carrying_injured_soldiers.mp4",
+        "military_soldiers_inside_building_as_a_team_tpv.mp4",
+        "military_soldiers_parachuting_down_from_the_sky_in_the_desert.mp4",
+        "military_soldiers_running_in_battle.mp4",
+        "military_soldiers_running_in_city_action_tpv.mp4",
+        "military_soldiers_running_into_the_ocean.mp4",
+        "military_soldiers_running_through_the_streets_of_a_bombed_town_fighting_desert.mp4",
+        "military_soldiers_salute_each_other_tpv.mp4",
+        "military_soldiers_walking_away_from_metal_base_blue_lights.mp4",
+        "military_soldiers_walking_in_wartorn_city.mp4",
+        "military_submarine_shooting_torpedoes.mp4",
+        "military_tank_convoy_green_field.mp4",
+        "military_tank_tpv.mp4",
+        "military_tanks_moving_through_cargo_area.mp4",
+        "military_thousands_walking_in_desert_through_camp.mp4",
+        "military_two_captains_talking.mp4",
+        "military_two_soldiers_in_camp_talking_tpv.mp4",
+        "military_wartorn_city_drone_shot.mp4"
+      ]
+    },
+  
+    "claude_api": {
+      "model": "claude-3-7-sonnet-20250219",
+      "creative_max_tokens": 4000,
+      "creative_temperature": 1.0,
+      "thinking_budget_tokens": 1500,
+      "polish_max_tokens": 1000,
+      "polish_temperature": 0.5
+    },
+    "ffmpeg": {
+      "max_concurrent_processes": 4,
+      "font_size": 24,
+      "position": "bottom",
+      "output_directory": "./output"
+    },
+    "default_genre": "military",
+    "prompts.military.creative.story_arc_count": 3,
+    "prompts.military.polish.specific_commands": [],
+    "audio.pause_factor": "0.5",
+    "voice": {
+      "voice_id": "AvUYKSeryCcU2BHSM8x7",
+      "model_id": "eleven_flash_v2",
+      "stability": 0.5,
+      "similarity_boost": 0.73,
+      "speed": 1.1,
+      "use_speaker_boost": true,
+      "output_format": "mp3_44100_128"
+    }
+  }
+  
+  
