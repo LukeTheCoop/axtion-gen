@@ -12,24 +12,67 @@ import cloudinary.api
 import time
 import argparse
 import sys
-import os
-from dotenv import load_dotenv
-
-# Load environment variables from .env file
-load_dotenv()
-
-# Get Cloudinary API secret from environment variables
-CLOUD_API_SECRET = os.getenv('CLOUD')
-if not CLOUD_API_SECRET:
-    print("Warning: CLOUD environment variable not found. Using default configuration.")
+import random
 
 # Cloudinary configuration
 # Already set with your credentials
 cloudinary.config(
     cloud_name = "ddab3rxhe",
     api_key = "942222813488427",
-    api_secret = CLOUD_API_SECRET
+    api_secret = "5Oe9d7y4jE5zyijOa9Ertw_bFv0"
 )
+
+titles = [
+    "Insane Mission That Changed Everything! #militaryhistory #warstories #animatedshort #AIhistory",
+    "The Soldier Who Wouldn't Die! #unbelievablewar #militarylegends #animatedhistory #AIwar",
+    "Unbelievable Military Escape! #greatescapes #warhistory #animateddocumentary #militaryAI",
+    "Craziest War Hero You Never Heard Of! #forgottenheroes #militarylegends #animatedhistory #AIwar",
+    "The Battle History Tried to Forget! #lostbattles #hiddenhistory #animatedshort #militaryAI",
+    "He Took Down an Army Alone! #onevsmany #warriorlegend #animatedmilitary #AIhistory",
+    "Impossible Military Rescue! #heroicsoldiers #warrescues #animatedwar #militaryAI",
+    "This Spy Changed History Forever! #espionage #secretoperations #animatedhistory #militaryAI",
+    "Most Unexpected Victory in War! #againsttheodds #surprisingbattles #animatedmilitary #AIhistory",
+    "The Secret Operation Revealed! #topsecret #covertwarfare #animatedhistory #militaryAI",
+    "The Tank Battle That Defied Logic! #tankwarfare #militarystrategy #animatedhistory #AIwar",
+    "Pilot's Impossible Landing! #warpilots #incrediblefeats #animatedaviation #militaryAI",
+    "Warrior's Hidden Secret! #untoldstories #militarymystery #animatedhistory #AIwar",
+    "This Soldier Outwitted the Enemy! #geniuswarfare #militarytactics #animatedmilitary #AIhistory",
+    "The Battle Won by Accident! #unexpectedvictory #warhistory #animatedwar #militaryAI",
+    "The Craziest Naval Encounter Ever! #waratsea #navalwarfare #animatedhistory #AIwar",
+    "He Fooled an Entire Army! #mindgames #militarytricks #animatedmilitary #AIhistory",
+    "Unheard-of Tactic that Won the War! #battleinnovation #militarygenius #animatedwar #AIhistory",
+    "The Hero Who Refused to Surrender! #neverbackdown #unbreakablesoldier #animatedhistory #militaryAI",
+    "Strangest Allies in Military History! #unlikelyalliances #warpartnerships #animatedhistory #AIwar",
+    "The Soldier Who Became a Legend! #legendarywarriors #militaryheroes #animatedmilitary #AIhistory",
+    "Forgotten Hero of the Skies! #acepilots #aviationhistory #animatedwar #militaryAI",
+    "Battlefield Miracle That Made History! #unbelievablewar #historicbattles #animatedhistory #AIwar",
+    "Military Disaster Turned Triumph! #fromdefeattovictory #militarystrategy #animatedwar #AIhistory",
+    "The General Who Lost Everything! #fallencommanders #militarydrama #animatedhistory #AIwar",
+    "Most Mysterious Mission Ever! #warsecrets #covertops #animatedmilitary #AIhistory",
+    "The Incredible Soldier No One Believed! #againstallodds #militarycourage #animatedhistory #AIwar",
+    "Craziest Weapon Used in War! #wartech #unusualweapons #animatedmilitary #AIhistory",
+    "Secret Strategy That Fooled Everyone! #mastermind #militarytricks #animatedwar #AIhistory",
+    "War Hero with the Strangest Luck! #luckinbattle #unrealstories #animatedhistory #militaryAI",
+    "How One Mistake Saved Thousands! #accidentalsuccess #militarystrategy #animatedwar #AIhistory",
+    "Battle Strategy Gone Wild! #unexpectedtactics #warhistory #animatedmilitary #AIhistory",
+    "The Soldier Who Predicted the Future! #warprophecies #militarymysteries #animatedhistory #AIwar",
+    "Unlikely Hero Who Ended a War! #unexpectedleaders #militarygenius #animatedwar #AIhistory",
+    "The Battle Where Nobody Fired a Shot! #bloodlessvictory #unconventionalwarfare #animatedhistory #AIwar",
+    "Most Epic Last Stand Ever! #finalfight #warriorspirit #animatedmilitary #AIhistory",
+    "How One Soldier Fooled History! #militarytrickster #forgottenwarrior #animatedwar #AIhistory",
+    "Secret Weapon That Changed Everything! #gamechanger #wartechnology #animatedhistory #militaryAI",
+    "Soldier Who Survived the Impossible! #againstallodds #militarymiracle #animatedhistory #AIwar",
+    "Strangest Military Mission Ever! #bizarrewarfare #secretoperations #animatedmilitary #AIhistory",
+    "The Man Who Ended a Battle Alone! #onemanarmy #historicbattles #animatedwar #militaryAI",
+    "Hidden Story Behind Famous Battle! #unknownwarstories #historicbattles #animatedmilitary #AIhistory",
+    "Unreal Tactics That Won a War! #outofnowhere #brilliantstrategy #animatedhistory #AIwar",
+    "Most Legendary Military Trick! #deceptioninwar #militarystrategy #animatedmilitary #AIhistory",
+    "Pilot's Craziest Dogfight! #aerialcombat #warpilots #animatedhistory #AIwar",
+    "Secret Army Nobody Knew Existed! #hiddenforces #warhistory #animatedmilitary #AIhistory",
+    "He Defied Orders and Won! #rebelsoldier #unexpectedvictory #animatedwar #militaryAI",
+    "Mystery Battle Finally Explained! #forgottenwars #warsecrets #animatedhistory #AIwar",
+    "Unlikely Victory That Made History! #shockingwin #unexpectedoutcome #animatedmilitary #AIhistory"
+]
 
 # Rate limiter class to manage webhook request timing
 class RateLimiter:
@@ -256,10 +299,9 @@ def process_upload_folder():
     for video_path in video_files:
         print(f"\nPreparing to process: {video_path}")
         
-        # Get title and caption from user input
-        title = input(f"Enter title for {os.path.basename(video_path)} (default: Axtion Entertainment): ")
-        if not title.strip():
-            title = "Axtion Entertainment"
+        # Use the new title selection feature
+        print(f"Selecting title for {os.path.basename(video_path)}:")
+        title = select_title()
         
         caption = input(f"Enter caption (default: Axtion Entertainment is a cutting-edge media company): ")
         if not caption.strip():
@@ -281,11 +323,58 @@ def process_upload_folder():
                 print("Stopping video processing.")
                 break
 
+def select_title():
+    """
+    Allows the user to select a title from random options or enter their own.
+    
+    Returns:
+        str: The selected or entered title
+    """
+    while True:
+        choice = input("How would you like to choose a title?\n1. Select from 5 random titles\n2. Enter your own title\nYour choice (1 or 2): ")
+        
+        if choice == "1":
+            return select_from_random_titles()
+        elif choice == "2":
+            return input("Enter your custom title: ")
+        else:
+            print("Invalid choice. Please enter 1 or 2.")
+
+def select_from_random_titles():
+    """
+    Presents 5 random titles for selection.
+    
+    Returns:
+        str: The selected title
+    """
+    while True:
+        # Get 5 random titles
+        available_titles = random.sample(titles, min(5, len(titles)))
+        
+        # Display titles with numbers
+        print("\nSelect a title by entering its number:")
+        for i, title in enumerate(available_titles, 1):
+            print(f"{i}. {title}")
+        print("0. Show different options")
+        
+        # Get user selection
+        try:
+            selection = int(input("\nYour choice (0-5): "))
+            if selection == 0:
+                print("Refreshing title options...")
+                continue
+            elif 1 <= selection <= len(available_titles):
+                return available_titles[selection-1]
+            else:
+                print(f"Please enter a number between 0 and {len(available_titles)}")
+        except ValueError:
+            print("Please enter a valid number")
+
 def main():
     """Main function to process video and send to webhook."""
     parser = argparse.ArgumentParser(description='Process a video and send it to a webhook with rate limiting.')
     parser.add_argument('--video', type=str, default='input_video.mp4', help='Path to the video file')
-    parser.add_argument('--title', type=str, default='Axtion Entertainment', help='Title for the video')
+    parser.add_argument('--title', type=str, help='Title for the video')
     parser.add_argument('--caption', type=str, default='Axtion Entertainment is a cutting-edge media company specializing in immersive video experiences', help='Caption for the video')
     parser.add_argument('--count', type=int, default=1, help='Number of times to send the request (for testing rate limiting)')
     parser.add_argument('--test-webhook', action='store_true', help='Test the webhook directly without uploading a video')
@@ -299,19 +388,24 @@ def main():
         print("Replace 'your_cloud_name', 'your_api_key', and 'your_api_secret' with your actual Cloudinary credentials.")
         return
     
+    # If title is not provided via command line, use the title selection process
+    if not args.title:
+        selected_title = select_title()
+    else:
+        selected_title = args.title
     
     # Send multiple requests if requested (for testing rate limiting)
     for i in range(args.count):
         if args.count > 1:
             print(f"\n=== Processing request {i+1} of {args.count} ===")
             # Create a unique title for each request in batch mode
-            current_title = f"{args.title} - Batch {i+1}"
+            current_title = f"{selected_title} - Batch {i+1}"
             preview_filename = f"video_preview_{i+1}.html"
         else:
-            current_title = args.title
+            current_title = selected_title
             preview_filename = "video_preview_cloudinary.html"
         
-        success = process_video(args.video, current_title, args.caption, preview_filename)
+        success = process_video(args.video, current_title, args.caption)
         
         if not success:
             print(f"Failed to process request {i+1}. Stopping batch.")
