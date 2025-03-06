@@ -1,92 +1,202 @@
 {
   "audio_1.mp3": {
-    "source_video": "military_large_battle_scene_heavy_action_aerial_shot.mp4",
+    "source_video": "military_soldier_doing_analysis_on_computers_tpv.mp4",
     "clip": "clip_1.mp4",
-    "line": "This is the true story of a 17-year-old who made a split-second decision that saved his fellow Marines."
+    "line": "0500 hours. Forward Operating Base Dagger."
   },
   "audio_2.mp3": {
-    "source_video": "military_navy_boats_volcano_beach_ocean.mp4",
+    "source_video": "military_commander_meeting_tpv.mp4",
     "clip": "clip_2.mp4",
-    "line": "February 20, 1945."
+    "line": "Commander Hayes studies the satellite imagery."
   },
   "audio_3.mp3": {
-    "source_video": "military_soldiers_running_in_battle.mp4",
+    "source_video": "military_two_captains_talking.mp4",
     "clip": "clip_3.mp4",
-    "line": "Iwo Jima's black volcanic ash coated everything."
+    "line": "We have men down in Sector 7."
   },
   "audio_4.mp3": {
-    "source_video": "military_soldiers_running_through_the_streets_of_a_bombed_town_fighting_desert.mp4",
+    "source_video": "military_wartorn_city_drone_shot.mp4",
     "clip": "clip_4.mp4",
-    "line": "Private First Class Jacklyn Lucas advanced with three Marines."
+    "line": "Intelligence reports confirm heavy enemy presence."
   },
   "audio_5.mp3": {
-    "source_video": "military_soldier_running_in_night_nvg_tpv.mp4",
+    "source_video": "military_med_evac_soldiers_rescuing_a_soldier_desert.mp4",
     "clip": "clip_5.mp4",
-    "line": "They moved cautiously through a narrow trench."
+    "line": "Three soldiers critically wounded."
   },
   "audio_6.mp3": {
-    "source_video": "military_soldiers_inside_building_as_a_team_tpv.mp4",
+    "source_video": "military_helicopter_base_with_soldiers_running_in_and_out_desert.mp4",
     "clip": "clip_6.mp4",
-    "line": "Enemy soldiers appeared suddenly ahead."
+    "line": "Medical evacuation is the only option."
   },
   "audio_7.mp3": {
-    "source_video": "military_running_from_bombs_fire_desert.mp4",
+    "source_video": "military_med_evac_rescue_mission_helicopter_desert.mp4",
     "clip": "clip_7.mp4",
-    "line": "Two grenades landed at their feet."
+    "line": "Time is running out."
   },
   "audio_8.mp3": {
-    "source_video": "military_soldier_sniping_out_of_building_tpv.mp4",
+    "source_video": "military_captain_giving_instructions_tpv.mp4",
     "clip": "clip_8.mp4",
-    "line": "Lucas shouted a warning to his squad."
+    "line": "Captain Reynolds assembles the rescue team."
   },
   "audio_9.mp3": {
-    "source_video": "military_soldier_running_through_a_building_with_a_gun_hostages.mp4",
+    "source_video": "military_soldiers_inside_building_as_a_team_tpv.mp4",
     "clip": "clip_9.mp4",
-    "line": "No time to escape."
+    "line": "This is a high-risk extraction."
   },
   "audio_10.mp3": {
-    "source_video": "military_soldiers_carrying_away_injured_soldiers_desert.mp4",
+    "source_video": "military_soldiers_salute_each_other_tpv.mp4",
     "clip": "clip_10.mp4",
-    "line": "Lucas threw himself forward onto one grenade."
+    "line": "Six elite operators volunteer for the mission."
   },
   "audio_11.mp3": {
-    "source_video": "military_med_evac_soldiers_rescuing_a_soldier_desert.mp4",
+    "source_video": "military_group_med_evac_motivational.mp4",
     "clip": "clip_11.mp4",
-    "line": "He pulled the second grenade beneath his body."
+    "line": "Each man knows the stakes."
   },
   "audio_12.mp3": {
-    "source_video": "military_med_evac_with_helicopter_drop_in_background.mp4",
+    "source_video": "military_soldiers_running_in_battle.mp4",
     "clip": "clip_12.mp4",
-    "line": "The explosions tore through his chest and right side."
+    "line": "No one gets left behind."
   },
   "audio_13.mp3": {
-    "source_video": "military_med_evac_desert_wide.mp4",
+    "source_video": "military_helicopter_base_with_soldiers_running_in_and_out_desert.mp4",
     "clip": "clip_13.mp4",
-    "line": "His fellow Marines survived without a scratch."
+    "line": "Black Hawks power up on the landing zone."
   },
   "audio_14.mp3": {
-    "source_video": "military_soldiers_carrying_injured_soldiers.mp4",
+    "source_video": "military_helicopter_dropping_soldiers_tpv.mp4",
     "clip": "clip_14.mp4",
-    "line": "Lucas somehow clung to life."
+    "line": "Rotors slice through the dawn air."
   },
   "audio_15.mp3": {
-    "source_video": "military_medal_ceremony_tpv.mp4",
+    "source_video": "military_drone_flying_over_the_desert.mp4",
     "clip": "clip_15.mp4",
-    "line": "President Truman presented him the Medal of Honor."
+    "line": "Dust clouds billow across the tarmac."
   },
   "audio_16.mp3": {
-    "source_video": "military_soldiers_salute_each_other_tpv.mp4",
+    "source_video": "military_group_med_evac_motivational.mp4",
     "clip": "clip_16.mp4",
-    "line": "The youngest Marine ever to receive our nation's highest decoration."
+    "line": "Medics secure their equipment."
   },
   "audio_17.mp3": {
-    "source_video": "military_soldier_at_funeral_for_comrades_tpv.mp4",
+    "source_video": "military_med_evac_desert_wide.mp4",
     "clip": "clip_17.mp4",
-    "line": "One moment of extraordinary courage saved three lives."
+    "line": "Combat rescue is their specialty."
   },
   "audio_18.mp3": {
-    "source_video": "military_soldiers_salute_each_other_tpv.mp4",
+    "source_video": "military_jet_flying_in_air_tpv.mp4",
     "clip": "clip_18.mp4",
-    "line": "Remember the heroes who sacrificed everything for their brothers in arms."
+    "line": "The helicopters lift off into the orange sky."
+  },
+  "audio_19.mp3": {
+    "source_video": "military_drone_flying_over_the_desert.mp4",
+    "clip": "clip_19.mp4",
+    "line": "Below, the desert stretches endlessly."
+  },
+  "audio_20.mp3": {
+    "source_video": "military_thousands_walking_in_desert_through_camp.mp4",
+    "clip": "clip_20.mp4",
+    "line": "Hostile territory in all directions."
+  },
+  "audio_21.mp3": {
+    "source_video": "military_soldier_doing_analysis_on_computers_tpv.mp4",
+    "clip": "clip_21.mp4",
+    "line": "Radio chatter keeps the team informed."
+  },
+  "audio_22.mp3": {
+    "source_video": "military_soldier_standing_in_cargo_plane_looking_towards_camera_tpv.mp4",
+    "clip": "clip_22.mp4",
+    "line": "Approaching drop zone in five."
+  },
+  "audio_23.mp3": {
+    "source_video": "military_helicopter_dropping_soldiers_tpv.mp4",
+    "clip": "clip_23.mp4",
+    "line": "The Black Hawk hovers ten feet above ground."
+  },
+  "audio_24.mp3": {
+    "source_video": "military_soldier_repelling_from_helicopter.mp4",
+    "clip": "clip_24.mp4",
+    "line": "Fast-ropes deploy in synchronized precision."
+  },
+  "audio_25.mp3": {
+    "source_video": "military_soldier_repelling_from_helicopter.mp4",
+    "clip": "clip_25.mp4",
+    "line": "Operators descend into the combat zone."
+  },
+  "audio_26.mp3": {
+    "source_video": "military_shooting_out_of_window_city_fpv.mp4",
+    "clip": "clip_26.mp4",
+    "line": "Boots hit sand as gunfire erupts nearby."
+  },
+  "audio_27.mp3": {
+    "source_video": "military_soldiers_running_through_the_streets_of_a_bombed_town_fighting_desert.mp4",
+    "clip": "clip_27.mp4",
+    "line": "The rescue team moves with practiced efficiency."
+  },
+  "audio_28.mp3": {
+    "source_video": "military_soldiers_running_in_battle.mp4",
+    "clip": "clip_28.mp4",
+    "line": "One kilometer to the wounded."
+  },
+  "audio_29.mp3": {
+    "source_video": "military_drone_flying_over_the_desert.mp4",
+    "clip": "clip_29.mp4",
+    "line": "Desert heat already pushing 100 degrees."
+  },
+  "audio_30.mp3": {
+    "source_video": "military_soldiers_running_through_the_streets_of_a_bombed_town_fighting_desert.mp4",
+    "clip": "clip_30.mp4",
+    "line": "The team navigates through rocky terrain."
+  },
+  "audio_31.mp3": {
+    "source_video": "military_radar_nvg_fpv.mp4",
+    "clip": "clip_31.mp4",
+    "line": "Enemy positions marked on tactical displays."
+  },
+  "audio_32.mp3": {
+    "source_video": "military_soldier_running_in_night_nvg_tpv.mp4",
+    "clip": "clip_32.mp4",
+    "line": "Every second counts."
+  },
+  "audio_33.mp3": {
+    "source_video": "military_wartorn_city_drone_shot.mp4",
+    "clip": "clip_33.mp4",
+    "line": "The battlefield comes into view."
+  },
+  "audio_34.mp3": {
+    "source_video": "military_armored_vehicle_on_fire_desert.mp4",
+    "clip": "clip_34.mp4",
+    "line": "Smoke rises from disabled vehicles."
+  },
+  "audio_35.mp3": {
+    "source_video": "military_shooting_out_of_window_city_fpv.mp4",
+    "clip": "clip_35.mp4",
+    "line": "Shell casings litter the ground."
+  },
+  "audio_36.mp3": {
+    "source_video": "military_soldiers_running_through_the_streets_of_a_bombed_town_fighting_desert.mp4",
+    "clip": "clip_36.mp4",
+    "line": "The wounded are sheltered behind a ridge."
+  },
+  "audio_37.mp3": {
+    "source_video": "military_shooting_out_of_window_city_fpv.mp4",
+    "clip": "clip_37.mp4",
+    "line": "Two providing cover, three critically injured."
+  },
+  "audio_38.mp3": {
+    "source_video": "military_soldier_sniping_out_of_building_tpv.mp4",
+    "clip": "clip_38.mp4",
+    "line": "Rescue team on site."
+  },
+  "audio_39.mp3": {
+    "source_video": "military_med_evac_soldiers_rescuing_a_soldier_desert.mp4",
+    "clip": "clip_39.mp4",
+    "line": "Medics immediately assess casualties."
+  },
+  "audio_40.mp3": {
+    "source_video": "military_med_evac_soldiers_rescuing_a_soldier_desert.mp4",
+    "clip": "clip_40.mp4",
+    "line": "Tourniquets applied to stemming blood loss."
   }
 }

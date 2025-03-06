@@ -34,16 +34,21 @@ class AudioProcessorService:
         # Get audio configuration from config service
         audio_config = self.config_service.get("audio", {})
         
+        # Get voice configuration from config service
+        voice_config = self.config_service.get("voice", {})
+        
         # Initialize audio generator with config
         self._audio_generator = None
         self.audio_config = {
-            "voice_id": audio_config.get("voice_id", "hKUnzqLzU3P9IVhYHREu"),
-            "model_id": audio_config.get("model_id", "eleven_flash_v2"),
-            "stability": audio_config.get("stability", 0.5),
-            "similarity_boost": audio_config.get("similarity_boost", 0.75),
-            "speed": audio_config.get("speed", 1.15),
-            "use_speaker_boost": audio_config.get("use_speaker_boost", True),
-            "output_format": audio_config.get("output_format", "mp3_44100_128"),
+            # Use voice settings from the voice section
+            "voice_id": voice_config.get("voice_id", "hKUnzqLzU3P9IVhYHREu"),
+            "model_id": voice_config.get("model_id", "eleven_flash_v2"),
+            "stability": voice_config.get("stability", 0.5),
+            "similarity_boost": voice_config.get("similarity_boost", 0.75),
+            "speed": voice_config.get("speed", 1.15),
+            "use_speaker_boost": voice_config.get("use_speaker_boost", True),
+            "output_format": voice_config.get("output_format", "mp3_44100_128"),
+            # Keep audio directory and processing settings from audio section
             "audio_output_dir": audio_config.get("output_directory", "data/current"),
             "max_workers": audio_config.get("max_concurrent_processes", 4),
             "max_retries": audio_config.get("max_retries", 3),
@@ -85,6 +90,9 @@ class AudioProcessorService:
             return []
         
         logger.info(f"Processing audio generation from {video_list_path}")
+        
+        # Update audio generator config to ensure it's using the latest settings
+        self.update_audio_generator_config()
         
         # Ensure audio output directory exists
         audio_dir = self.audio_config["audio_output_dir"]
@@ -243,4 +251,38 @@ class AudioProcessorService:
             return set()
             
         all_files = self._get_audio_files_from_video_list(video_list_path)
-        return {f for f in all_files if os.path.exists(f)} 
+        return {f for f in all_files if os.path.exists(f)}
+    
+    def update_audio_generator_config(self):
+        """
+        Update the audio generator configuration with the latest settings from config.json.
+        This should be called after updating the voice or audio configuration.
+        """
+        # Get audio configuration from config service
+        audio_config = self.config_service.get("audio", {})
+        
+        # Get voice configuration from config service
+        voice_config = self.config_service.get("voice", {})
+        
+        # Update audio generator config
+        self.audio_config = {
+            # Use voice settings from the voice section
+            "voice_id": voice_config.get("voice_id", "hKUnzqLzU3P9IVhYHREu"),
+            "model_id": voice_config.get("model_id", "eleven_flash_v2"),
+            "stability": voice_config.get("stability", 0.5),
+            "similarity_boost": voice_config.get("similarity_boost", 0.75),
+            "speed": voice_config.get("speed", 1.15),
+            "use_speaker_boost": voice_config.get("use_speaker_boost", True),
+            "output_format": voice_config.get("output_format", "mp3_44100_128"),
+            # Keep audio directory and processing settings from audio section
+            "audio_output_dir": audio_config.get("output_directory", "data/current"),
+            "max_workers": audio_config.get("max_concurrent_processes", 4),
+            "max_retries": audio_config.get("max_retries", 3),
+            "retry_delay": audio_config.get("retry_delay", 2),
+            "max_retry_delay": audio_config.get("max_retry_delay", 10)
+        }
+        
+        # Reset the audio generator so it will be recreated with the new config
+        self._audio_generator = None
+        
+        logger.info("Audio generator configuration updated") 
