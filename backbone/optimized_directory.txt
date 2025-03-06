@@ -1,0 +1,267 @@
+# MarketAgent Optimized Directory Structure
+
+```
+/marketagent
+│
+├── app                        # Main application code
+│   ├── __init__.py
+│   ├── api                    # API modules
+│   │   ├── __init__.py
+│   │   ├── controllers        # API endpoint controllers
+│   │   │   ├── __init__.py
+│   │   │   ├── audio_controller.py
+│   │   │   ├── config_controller.py
+│   │   │   ├── content_controller.py
+│   │   │   ├── delivery_controller.py
+│   │   │   └── video_controller.py
+│   │   ├── middleware         # API middleware
+│   │   │   ├── __init__.py
+│   │   │   ├── auth_middleware.py
+│   │   │   ├── error_middleware.py
+│   │   │   └── logging_middleware.py
+│   │   ├── schemas            # API data validation schemas
+│   │   │   ├── __init__.py
+│   │   │   ├── audio_schemas.py
+│   │   │   ├── config_schemas.py
+│   │   │   ├── content_schemas.py
+│   │   │   └── video_schemas.py
+│   │   └── routes.py          # API route definitions
+│   │
+│   ├── core                   # Core business logic
+│   │   ├── __init__.py
+│   │   ├── content            # Content generation domain
+│   │   │   ├── __init__.py
+│   │   │   ├── script_generator.py
+│   │   │   ├── prompt_enhancer.py
+│   │   │   └── creativity_engine.py
+│   │   │
+│   │   ├── audio              # Audio processing domain
+│   │   │   ├── __init__.py
+│   │   │   ├── text_to_speech.py
+│   │   │   ├── audio_mixer.py
+│   │   │   ├── music_processor.py
+│   │   │   └── silence_detector.py
+│   │   │
+│   │   ├── video              # Video processing domain
+│   │   │   ├── __init__.py
+│   │   │   ├── clip_processor.py
+│   │   │   ├── video_merger.py
+│   │   │   ├── caption_generator.py
+│   │   │   └── transition_effects.py
+│   │   │
+│   │   └── delivery           # Delivery domain
+│   │       ├── __init__.py
+│   │       ├── video_composer.py
+│   │       ├── output_formatter.py
+│   │       └── platform_delivery.py
+│   │
+│   ├── infrastructure         # Infrastructure and external services
+│   │   ├── __init__.py
+│   │   ├── ai_services        # AI service integrations
+│   │   │   ├── __init__.py
+│   │   │   ├── anthropic_client.py
+│   │   │   └── elevenlab_client.py
+│   │   │
+│   │   ├── storage            # Storage utilities
+│   │   │   ├── __init__.py
+│   │   │   ├── file_system.py
+│   │   │   └── blob_storage.py
+│   │   │
+│   │   ├── ffmpeg             # Media processing utilities
+│   │   │   ├── __init__.py
+│   │   │   ├── ffmpeg_audio.py
+│   │   │   ├── ffmpeg_video.py
+│   │   │   └── ffprobe.py
+│   │   │
+│   │   └── queue              # Message queue for async processing
+│   │       ├── __init__.py
+│   │       ├── job_queue.py
+│   │       └── task_processor.py
+│   │
+│   ├── config                 # Configuration management
+│   │   ├── __init__.py
+│   │   ├── settings.py        # App settings
+│   │   ├── environment.py     # Environment configuration
+│   │   └── validators.py      # Config validators
+│   │
+│   ├── common                 # Common utilities and helpers
+│   │   ├── __init__.py
+│   │   ├── exceptions.py      # Custom exception classes
+│   │   ├── utils.py           # General utility functions
+│   │   ├── logging.py         # Logging configuration
+│   │   └── decorators.py      # Common decorators
+│   │
+│   └── main.py                # Application entry point
+│
+├── data                       # Data directories
+│   ├── media                  # Media storage
+│   │   ├── videos             # Source video clips
+│   │   │   └── {genres}
+│   │   ├── audio              # Generated audio files
+│   │   │   └── {project_id}
+│   │   ├── music              # Music tracks
+│   │   │   └── {track_id}
+│   │   └── output             # Final output videos
+│   │       └── {project_id}
+│   │
+│   ├── prompts                # Prompt templates and user prompts
+│   │   └── {genres}
+│   │
+│   ├── temp                   # Temporary working files (cleaned up regularly)
+│   │   └── {project_id}
+│   │
+│   └── captions               # Caption files
+│       └── {project_id}
+│
+├── tests                      # Test suite
+│   ├── unit                   # Unit tests
+│   │   ├── api
+│   │   ├── core
+│   │   ├── infrastructure
+│   │   └── config
+│   │
+│   ├── integration            # Integration tests
+│   │   ├── api_integration
+│   │   ├── core_integration
+│   │   └── end_to_end
+│   │
+│   ├── fixtures               # Test fixtures
+│   │   ├── videos
+│   │   ├── audio
+│   │   └── prompts
+│   │
+│   └── conftest.py            # Test configuration
+│
+├── docs                       # Documentation
+│   ├── api                    # API documentation
+│   ├── architecture           # Architecture diagrams
+│   ├── development            # Development guides
+│   ├── user                   # User guides
+│   └── examples               # Example configurations and workflows
+│
+├── scripts                    # Utility scripts
+│   ├── setup.py               # Setup script
+│   ├── db_migration.py        # Database migration scripts
+│   ├── test_data_generator.py # Generate test data
+│   └── cleanup.py             # Cleanup temporary files
+│
+├── docker                     # Docker configuration
+│   ├── Dockerfile             # Main application Dockerfile
+│   ├── docker-compose.yml     # Docker Compose for local development
+│   ├── docker-compose.prod.yml # Production Docker Compose
+│   └── .dockerignore          # Docker ignore file
+│
+├── .github                    # GitHub configurations
+│   └── workflows              # CI/CD workflows
+│       ├── testing.yml        # Testing workflow
+│       ├── linting.yml        # Linting workflow
+│       └── deployment.yml     # Deployment workflow
+│
+├── .vscode                    # VSCode configurations
+│   ├── launch.json            # Debugging configurations
+│   └── settings.json          # Editor settings
+│
+├── requirements
+│   ├── base.txt               # Base dependencies
+│   ├── dev.txt                # Development dependencies
+│   ├── test.txt               # Testing dependencies
+│   └── prod.txt               # Production dependencies
+│
+├── .env.example               # Example environment variables
+├── .gitignore                 # Git ignore file
+├── README.md                  # Project readme
+├── LICENSE                    # License file
+├── CHANGELOG.md               # Change log
+└── pyproject.toml             # Python project configuration
+```
+
+## Key Improvements in the New Structure
+
+### 1. Domain-Driven Organization
+- Core business logic separated into clear domains (content, audio, video, delivery)
+- Each domain has well-defined responsibilities and boundaries
+
+### 2. Layered Architecture
+- **API Layer**: Handles HTTP requests, routing, and data validation
+- **Core Layer**: Contains business logic and domain models
+- **Infrastructure Layer**: Manages external services and technical concerns
+
+### 3. Clean Configuration Management
+- Configuration organized in a dedicated module
+- Environment-specific settings separated from application code
+- Configuration validation built-in
+
+### 4. Improved Testing Structure
+- Separate directories for unit, integration, and end-to-end tests
+- Test fixtures isolated from production code
+- Comprehensive test coverage facilitated by the structure
+
+### 5. Better Resource Management
+- Clear data organization with project-specific directories
+- Temporary files managed in dedicated locations
+- Data segregated by type and purpose
+
+### 6. DevOps Integration
+- Docker configuration for consistent environments
+- CI/CD workflow templates
+- Environment variable management
+
+### 7. Documentation
+- Comprehensive documentation organized by audience and purpose
+- Architecture diagrams to visualize system design
+- Example configurations and workflows
+
+### 8. Dependency Management
+- Separated requirements files for different environments
+- Modern Python project configuration with pyproject.toml
+- Clean dependency specification
+
+This structure establishes a solid foundation for a maintainable, testable, and scalable application while addressing the issues identified in the current implementation.
+
+
+
+PROCESS ROUTER - VIDEO LIST LENGTH: 0
+Look here, empty video list []
+2025-03-05 22:08:53,714 - app.main - INFO - Starting video generation pipeline for military video with prompt: Create an engaging historical short account of the...
+MAIN PIPELINE - AVAILABLE GENRES: ['military', 'corporate']
+MAIN PIPELINE - PROMPTS: Found 2 keys for genre 'military'
+MAIN PIPELINE - CONFIG SERVICE TYPE: <class 'app.common.config.ConfigService'>
+MAIN PIPELINE - CONFIG SERVICE ID: 4360642848
+MAIN PIPELINE - VIDEO LIST TYPE: <class 'list'>
+MAIN PIPELINE - VIDEO LIST LENGTH: 0
+<app.common.config.ConfigService object at 0x103ea2120>
+HERE IS VIDEO LIST:
+
+[]
+2025-03-05 22:08:53,787 - app.infrastructure.ai_services.gpt_generate - INFO - Initializing OpenAI client (API key provided)
+2025-03-05 22:08:53,806 - app.main - INFO - Generating creative response with thinking...
+FINAL CREATIVE PROMPT: You are the Creative Agent in the first step in the video production pipeline. Your task is to analyze the following inputs: 1. Mothership Data: A comprehensive collection of user-provided context, narrative guidelines, and script outlines.2. Video List: A set of available short 5 second video clips with metadata 3. User Prompt: The high-level prompt that describes the intended message and tone. Your response should: First generate a detailed set of commands to guide the script-writing agent. Then Create a specified number of story arcs (for example, "create 3 story arcs"). Then Include instructions that ensure a deep level of narrative detail and creative direction from the mothership. Then specify an action level that outlines how dynamic or detailed the final script should be.
+- Recommend which videos from the list to incorporate, based on the best match for the intended theme, with plenty of options.
+
+Return your output as a JSON object with the following keys:
+- `story_arcs`: An array where each element describes one narrative arc.
+- `commands`: A detailed list of creative instructions, each clearly explaining what to incorporate from the mothership and how to structure the narrative.
+- `action_level`: A directive specifying the intensity or style of actions the script writer should implement. Ensure that your instructions are broad and comprehensive, providing as much useful detail as possible to guide the script writing agent in creating a phenomenal, cohesive script. Make a list of what videos should be used, ensure they exist in the video list.
+
+Generate your creative command list as a JSON object.
+
+User input: In a more recent act of valor, on October 22, 2015, Sergeant Major Thomas P. Payne, then a Sergeant First Class in the U.S. Army’s elite Delta Force, participated in a high-stakes hostage rescue mission in Hawija, Iraq. Intelligence had revealed that 70 hostages were facing imminent execution by ISIS militants. Under the cover of darkness, Payne and his team were inserted by helicopter near the prison compound. They swiftly engaged the enemy, breaching a building to liberate 37 hostages. Amidst intense gunfire and with the building engulfed in flames, Payne learned of additional hostages trapped in a second building. Without regard for his own safety, he fought his way inside, cutting through locks to free the remaining captives. Despite the collapsing structure and relentless enemy fire, Payne’s unwavering determination ensured the successful rescue of all 70 hostages. For his extraordinary heroism, he was awarded the Medal of Honor on September 11, 2020.  ￼
+
+
+Create an engaging historical short account of the moment of action that caused Charles to get award.
+
+Use the detail given prior.
+
+Ensure a full story, start and finish. Make it intense, instantly hooking the reader.
+
+Grab the readers attention by saying in your hook how this is based on a true event. At the same time ensure the first shot is an action shot relevent video, reeling in the users instantly.
+
+Ensure the first video, line, and set up is perfect and attractive.
+
+Each line say at most one location, name, or time.  and slowly over time unvail the story.
+
+Ensure each line is short and punchy.
+
+Create 3 story arc examples.
+Ensure a high level of commands from the Mothership.
+Ensure a medium action level.
