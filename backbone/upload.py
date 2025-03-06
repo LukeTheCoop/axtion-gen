@@ -13,13 +13,17 @@ import time
 import argparse
 import sys
 import random
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Cloudinary configuration
-# Already set with your credentials
+# Get credentials from environment variables
 cloudinary.config(
     cloud_name = "ddab3rxhe",
-    api_key = "942222813488427",
-    api_secret = "5Oe9d7y4jE5zyijOa9Ertw_bFv0"
+    api_key = "465833659499119",
+    api_secret = os.environ.get("CLOUD")
 )
 
 titles = [
